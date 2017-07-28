@@ -1,0 +1,16 @@
+{% extends 'common/basic.html' %}
+{% block title %}
+    主页面
+{% endblock %}
+{% block content %}
+ the index page!
+<h1 style="color: red;">{{ info.msg }}</h1>
+ <form action="{% url 'add_user' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="username">
+        <input type="password" name="password" placeholder="password">
+        <input type="submit" value="add">
+   </form>
+
+    <a href="/blog/logout/" >exit</a>
+{% endblock %}
